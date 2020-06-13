@@ -3,13 +3,27 @@
   <head>
     <meta charset="utf-8" />
     <!-- fluid icon for Mac OS desktop app -->
-    <link rel="fluid-icon" href="logo_512x512.png" title="Sembark" />
+    <link
+      rel="fluid-icon"
+      href="images/logos/logo_512x512.png"
+      title="Sembark"
+    />
     <!-- Mask icon for Safari -->
-    <link rel="mask-icon" href="pinned-icon.svg" color="#1A202C" />
+    <link rel="mask-icon" href="images/icon.svg" color="#1A202C" />
     <!-- Fallback icon if SVG icons are not supported -->
-    <link rel="alternate icon" type="image/png" href="favicons/favicon.png" />
+    <link
+      rel="alternate icon"
+      class="js-site-favicon"
+      type="image/png"
+      href="favicons/favicon.png"
+    />
     <!-- SVG icon -->
-    <link rel="icon" type="image/svg+xml" href="favicons/favicon.svg" />
+    <link
+      rel="icon"
+      class="js-site-favicon"
+      type="image/svg+xml"
+      href="favicons/favicon.svg"
+    />
     <meta
       name="viewport"
       content="width=device-width, initial-scale=1, shrink-to-fit=no"
@@ -17,8 +31,7 @@
     <title>Assets for Sembark</title>
     <meta
       name="description"
-      content="Manage all your agent needs, from sales to operations to finance management, at
-    one place effectively and with ease."
+      content="Assets for Sembark Application (Tourism SAAS Product)"
     />
     <style>
       .font-sans {
@@ -54,37 +67,338 @@
       .bg-gray-100 {
         background-color: #f7fafc;
       }
-      @keyframes bounce {
-        from {
-          transform: translateY(-20px);
-        }
-        to {
-          transform: translateY(0px);
-        }
+      .p-4 {
+        padding: 1rem;
       }
-      .bounce {
-        animation: bounce ease-in 1s alternate infinite;
+      .flex {
+        display: flex;
+      }
+      .items-center {
+        align-items: center;
+      }
+      .w-full {
+        width: 100%;
+      }
+      code {
+        background: whitesmoke;
+        color: black;
+        padding-left: 2px;
+        padding-right: 2px;
+      }
+      table {
+        border-collapse: collapse;
+        background: white;
+      }
+      .table-container {
+        width: 100%;
+        max-width: 100%;
+        overflow-x: auto;
+      }
+      caption {
+        text-align: left;
+      }
+      th,
+      td {
+        padding: 0.5rem;
+        vertical-align: top;
+      }
+      .bg-black {
+        background: black;
+      }
+      .text-white {
+        color: white;
+      }
+      pre {
+        border: 1px solid silver;
+        background: white;
+        padding: 1rem;
+        margin-top: 1rem;
+        margin-bottom: 1rem;
+      }
+      pre > code {
+        display: block;
+        background: transparent;
+        padding: 0;
+      }
+      .mb-16 {
+        margin-bottom: 4rem;
       }
     </style>
   </head>
-  <body class="font-sans m-0 bg-gray-100 tracking-wide">
-    <div class="h-full">
-      <div class="min-h-screen flex items-center justify-center text-center">
-        <div>
-          <div class="bounce">
-            <img src="logo_144x144.png" />
-          </div>
-          <h1>
-            Assets for <a href="https://sembark.com">Sembark Technologies</a>
-          </h1>
-          <p>
-            This page is not meant to be visited via Web. <br />
-            Perhaps you wanted to visit the
-            <a href="https://sembark.com">Application</a> or
-            <a href="https://docs.sembark.com">Documentation</a>.
-          </p>
+  <body class="font-sans m-0 bg-gray-100 tracking-wide min-h-screen">
+    <header class="p-4">
+      <nav class="flex items-center">
+        <img src="images/logos/logo_36x36.png" alt="Logo" />
+        <a href="https://sembark.com">Sembark</a>
+      </nav>
+    </header>
+    <main class="p-4">
+      <section class="mb-16">
+        <h2 id="logos">
+          Logos
+        </h2>
+        <div class="table-container">
+          <table border="1" class="w-full">
+            <caption>
+              Logos with there sources paths. All paths are relative to the
+              domain.
+            </caption>
+            <thead>
+              <tr>
+                <th>
+                  Source
+                </th>
+                <th>
+                  Description
+                </th>
+                <th>
+                  Preview
+                </th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>
+                  <code>images/logos/logo_16x16.png</code>
+                </td>
+                <td>
+                  The smallest logo. It's is there just in case!
+                </td>
+                <td>
+                  <img src="images/logos/logo_16x16.png" alt="16x16 Logo" />
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <code>images/logos/logo_36x36.png</code>
+                </td>
+                <td>
+                  Used mostly as application icon
+                </td>
+                <td>
+                  <img src="images/logos/logo_36x36.png" alt="36x36 Logo" />
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <code>images/logos/logo_48x48.png</code>
+                </td>
+                <td>
+                  General purpose logo size
+                </td>
+                <td>
+                  <img src="images/logos/logo_48x48.png" alt="48x48 Logo" />
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <code>images/logos/logo_96x96.png</code>
+                </td>
+                <td>
+                  When we need a logo with decent resolution.
+                </td>
+                <td>
+                  <img src="images/logos/logo_96x96.png" alt="96x96 Logo" />
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <code>images/logos/logo_144x144.png</code>
+                </td>
+                <td>
+                  When we need a logo with better resolution.
+                </td>
+                <td>
+                  <img src="images/logos/logo_144x144.png" alt="144x144 Logo" />
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <code>images/logos/logo_192x192.png</code>
+                </td>
+                <td>
+                  Mostly used in manifest of the web application.
+                </td>
+                <td>
+                  <img src="images/logos/logo_192x192.png" alt="192x192 Logo" />
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <code>images/logos/logo_512x512.png</code>
+                </td>
+                <td>
+                  When we need a larger logo. Mostly used in manifest of the web
+                  application.
+                </td>
+                <td>
+                  <img src="images/logos/logo_512x512.png" alt="512x512 Logo" />
+                </td>
+              </tr>
+            </tbody>
+          </table>
         </div>
-      </div>
-    </div>
+      </section>
+      <section>
+        <h2>Icon</h2>
+        <p>
+          Icon is a SVG image with 16x16 dimensions.
+        </p>
+        <div class="table-container">
+          <table border="1" class="w-full">
+            <thead>
+              <tr>
+                <th>
+                  Source
+                </th>
+                <th>
+                  Description
+                </th>
+                <th>
+                  Preview
+                </th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>
+                  <code>images/icon.svg</code>
+                </td>
+                <td>
+                  SVG icon
+                </td>
+                <td>
+                  <img src="images/icon.svg" alt="SVG Icon" />
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <h3>
+          Favicons
+        </h3>
+        <p>
+          Favicons are special cases of icons that are using as icons for
+          browsers tabs. We have SVGs and PNGs icons for <b>light</b> and
+          <b>dark</b> theme (system preference).
+        </p>
+        <div class="table-container">
+          <table border="1" class="w-full">
+            <thead>
+              <tr>
+                <th>
+                  Source
+                </th>
+                <th>
+                  Description
+                </th>
+                <th>
+                  Preview
+                </th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>
+                  <code>favicons/favicon.svg</code>
+                </td>
+                <td>
+                  SVG favicon for light theme
+                </td>
+                <td>
+                  <img
+                    src="favicons/favicon.svg"
+                    alt="SVG Favicon Light Theme"
+                  />
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <code>favicons/favicon.png</code>
+                </td>
+                <td>
+                  PNG favicon for light theme
+                </td>
+                <td>
+                  <img
+                    src="favicons/favicon.png"
+                    alt="PNG Favicon Light Theme"
+                  />
+                </td>
+              </tr>
+              <tr class="bg-black text-white">
+                <td>
+                  <code>favicons/favicon-dark.svg</code>
+                </td>
+                <td>
+                  SVG favicon for dark theme
+                </td>
+                <td>
+                  <img
+                    src="favicons/favicon-dark.svg"
+                    alt="SVG Favicon Dark Theme"
+                  />
+                </td>
+              </tr>
+              <tr class="bg-black text-white">
+                <td>
+                  <code>favicons/favicon-dark.png</code>
+                </td>
+                <td>
+                  PNG favicon for dark theme
+                </td>
+                <td>
+                  <img
+                    src="favicons/favicon-dark.png"
+                    alt="PNG Favicon Dark Theme"
+                  />
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <p>
+          To add support for light/dark theme icons, we need to add the PNG and
+          SVG favicons to the &lt;head&gt; tag.
+        </p>
+        <pre><code>
+    &lt;!-- Fallback icon if SVG icons are not supported -->&gt;
+    &lt;link
+      rel="alternate icon"
+      class="js-site-favicon"
+      type="image/png"
+      href="favicons/favicon.png"
+    /&gt;
+    &lt;!-- SVG icon --&gt;
+    &lt;link
+      rel="icon"
+      class="js-site-favicon"
+      type="image/svg+xml"
+      href="favicons/favicon.svg"
+    /&gt;
+    </code></pre>
+        <p>
+          We use JavaScript to update the favicons based on current theme along
+          with listening to the theme changes. The script is available at
+          <a href="js/themed-favicon.js" target="_blank"
+            ><code>js/themed-favicon.js</code></a
+          >. You can link the provided JavaScript file to handle the themed
+          favicon.
+        </p>
+        <pre><code>
+    &lt;script src="js/themed-favicon.js"&gt;&lt;/script&gt;
+            </code></pre>
+        <p>
+          Finally, we have fallback <code>.ico</code> file for favicon at
+          <code>favicons/favicon.ico</code>
+        </p>
+      </section>
+    </main>
+    <hr />
+    <footer class="p-4">
+      <a href="https://sembark.com">App</a> |
+      <a href="https://docs.sembark.com">Help</a>
+    </footer>
+    <script src="js/themed-favicon.js"></script>
   </body>
 </html>
