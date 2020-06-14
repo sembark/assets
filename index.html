@@ -5,7 +5,7 @@
     <!-- fluid icon for Mac OS desktop app -->
     <link
       rel="fluid-icon"
-      href="images/logos/logo_512x512.png"
+      href="https://assets.sembark.com/images/logos/logo_512x512.png"
       title="Sembark"
     />
     <!-- Mask icon for Safari -->
@@ -15,23 +15,56 @@
       rel="alternate icon"
       class="js-site-favicon"
       type="image/png"
-      href="favicons/favicon.png"
+      href="https://assets.sembark.com/favicons/favicon.png"
     />
     <!-- SVG icon -->
     <link
       rel="icon"
       class="js-site-favicon"
       type="image/svg+xml"
-      href="favicons/favicon.svg"
+      href="https://assets.sembark.com/favicons/favicon.svg"
     />
     <meta
       name="viewport"
       content="width=device-width, initial-scale=1, shrink-to-fit=no"
     />
     <title>Assets for Sembark</title>
+    <meta name="title" content="Assets for Sembark" />
+    <meta
+      name="twitter:title"
+      itemprop="title"
+      property="og:title"
+      content="Assets for Sembark"
+    />
     <meta
       name="description"
+      itemprop="description"
+      property="og:description"
       content="Assets for Sembark Application (Tourism SAAS Product)"
+    />
+    <meta
+      name="twitter:description"
+      content="Assets for Sembark Application (Tourism SAAS Product)"
+    />
+    <meta name="twitter:site" content="@sembark_" />
+    <meta name="twitter:creator" content="@sembark_" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta
+      name="twitter:image"
+      content="https://assets.sembark.com/images/og-image.png"
+    />
+    <meta
+      name="og:image"
+      content="https://assets.sembark.com/images/og-image.png"
+    />
+    <meta
+      name="og:image:secure_url"
+      content="https://assets.sembark.com/images/og-image.png"
+    />
+    <meta
+      name="image"
+      property="og:image"
+      content="https://assets.sembark.com/images/og-image.png"
     />
     <style>
       .font-sans {
@@ -252,6 +285,9 @@
           </li>
           <li>
             <a href="#logos">Logos</a>
+          </li>
+          <li>
+            <a href="#marketing">Marketing Images</a>
           </li>
           <li>
             <a href="#javascript">JavaScript</a>
@@ -583,6 +619,50 @@
                 <img src="images/logos/logo_512x512.png" alt="512x512 Logo" />
               </div>
             </div>
+          </div>
+          <p>
+            To add support for light/dark themes, you can use the provided
+            <a href="#themed_favicons">JavaScript file</a>.
+          </p>
+        </section>
+        <section class="mb-16">
+          <h2 id="marketing">Marketing Images</h2>
+          <p>
+            Marketing images are used for digital marketing, SEO and for offline
+            branding.
+          </p>
+          <h3>
+            Preview Card Image
+          </h3>
+          <p>
+            Use following image when we need to show a preview card. Most of the
+            marketing engines accepts an card image.
+          </p>
+          <div>
+            <p>
+              <a href="images/og-image.png" target="_blank"
+                >images/og-image.png</a
+              >
+            </p>
+            <div>
+              <img src="images/og-image.png" />
+            </div>
+            <p>
+              Here are the example usage for twitter and open graph (facebook)
+              marketing. As this is a large image, we should let the engines
+              know that we want to show a large summary card.
+            </p>
+            <pre
+              data-lang="html"
+            ><code>&lt;meta name="twitter:card" content="summary_large_image" /&gt;
+&lt;meta name="twitter:image" content="https://assets.sembark.com/images/og-image.png" /&gt;
+&lt;meta name="og:image" content="https://assets.sembark.com/images/og-image.png" /&gt;
+&lt;meta name="og:image:secure_url" content="https://assets.sembark.com/images/og-image.png" /&gt;
+&lt;meta name="image" itemprop="image" property="og:image" content="https::assets.sembark.com/images/og-image.png" /&gt;</code></pre>
+            <p>
+              <b>Note:</b> All the images url must of absolute i.e. must contain
+              the full path to image including the domain name.
+            </p>
           </div>
         </section>
         <section class="mb-16">
