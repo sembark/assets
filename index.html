@@ -40,365 +40,589 @@
           "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol",
           "Noto Color Emoji";
       }
+      html,
+      body {
+        box-sizing: border-box;
+      }
+      *,
+      *:before,
+      *:after {
+        box-sizing: inherit;
+      }
+      /* resets */
+      img {
+        max-width: 100%;
+      }
+      /* margin */
       .m-0 {
         margin: 0;
       }
-      .h-full {
-        height: 100%;
+      .mr-4 {
+        margin-right: 1rem;
       }
-      .min-h-screen {
-        min-height: 100vh;
+      .ml-4 {
+        margin-left: 1rem;
       }
-      .flex {
-        display: flex;
-      }
-      .items-center {
-        align-items: center;
-      }
-      .justify-center {
-        justify-content: center;
-      }
-      .text-center {
-        text-align: center;
-      }
-      .tracking-wide {
-        line-height: 1.5;
-      }
-      .bg-gray-100 {
-        background-color: #f7fafc;
-      }
-      .p-4 {
-        padding: 1rem;
-      }
-      .flex {
-        display: flex;
-      }
-      .items-center {
-        align-items: center;
-      }
-      .w-full {
-        width: 100%;
-      }
-      code {
-        background: whitesmoke;
-        color: black;
-        padding-left: 2px;
-        padding-right: 2px;
-      }
-      table {
-        border-collapse: collapse;
-        background: white;
-      }
-      .table-container {
-        width: 100%;
-        max-width: 100%;
-        overflow-x: auto;
-      }
-      caption {
-        text-align: left;
-      }
-      th,
-      td {
-        padding: 0.5rem;
-        vertical-align: top;
-      }
-      .bg-black {
-        background: black;
-      }
-      .text-white {
-        color: white;
-      }
-      pre {
-        border: 1px solid silver;
-        background: white;
-        padding: 1rem;
-        margin-top: 1rem;
+      .mb-4 {
         margin-bottom: 1rem;
-      }
-      pre > code {
-        display: block;
-        background: transparent;
-        padding: 0;
       }
       .mb-16 {
         margin-bottom: 4rem;
       }
+      .p-4 {
+        padding: 1rem;
+      }
+      .border {
+        border: 1px solid silver;
+      }
+      .bg-black {
+        background-color: black;
+      }
+      /* line height */
+      .tracking-wide {
+        line-height: 1.5;
+      }
+      /* minimum height*/
+      .min-h-screen {
+        min-height: 100vh;
+      }
+      /* text align */
+      .text-center {
+        text-align: center;
+      }
+      /* display */
+      .flex {
+        display: flex;
+      }
+      .items-center {
+        align-items: center;
+      }
+      .items-start {
+        align-items: flex-start;
+      }
+      .justify-center {
+        justify-content: center;
+      }
+      .justify-between {
+        justify-content: space-between;
+      }
+      .text-secondary {
+        color: #495057;
+      }
+      .relative {
+        position: relative;
+      }
+      .sticky {
+        position: sticky;
+      }
+      .top-0 {
+        top: 0;
+      }
+      .flex-1 {
+        flex: 1;
+        min-width: 0;
+      }
+      .flex-row-reverse {
+        flex-direction: row-reverse;
+      }
+      .pl-8 {
+        padding-left: 2rem;
+      }
+      /* components */
+      .container {
+        max-width: 1100px;
+        padding-left: 10px;
+        padding-right: 10px;
+        margin-left: auto;
+        margin-right: auto;
+      }
+      @keyframes blink {
+        from {
+          background: transparent;
+        }
+        to {
+          background: yellow;
+        }
+      }
+      :target {
+        animation: blink linear 0.25s alternate;
+        animation-iteration-count: 6;
+      }
+      .toc ul {
+        padding-left: 1rem;
+      }
+      .toc a {
+          color: inherit;
+          text-decoration: none;
+          opacity: .6;
+          display: block;
+          transition: opacity linear .15s;
+          margin-bottom: .5rem;
+      }
+      .toc a:hover {
+          opacity: 1;
+      }
+      .toc ul > ul {
+          font-size: 95%;
+      }
+      /* md devices */
+      @media (min-width: 768px) {
+        .md\:flex {
+          display: flex;
+        }
+        .md\:items-start {
+          align-items: flex-start;
+        }
+        .md\:flex-row-reverse {
+          flex-direction: row-reverse;
+        }
+        .md\:sticky {
+          position: sticky;
+        }
+        .md\:pl-16 {
+          padding-left: 4rem;
+        }
+        .md\:w-1\/3 {
+          width: 33.33333%;
+        }
+        .toc {
+          width: 350px;
+          padding-left: 5rem;
+        }
+        .toc > ul {
+          max-height: calc(100vh - 100px);
+              overflow: auto;
+        }
+      }
+      pre {
+        position: relative;
+        border: 1px solid silver;
+        width: 100%;
+        margin-top: 2.5rem;
+        margin-bottom: 2rem;
+      }
+      pre > code {
+        display: block;
+        max-width: 100%;
+        overflow-x: auto;
+        padding: 1rem;
+      }
+      pre::before {
+        content: attr(data-lang);
+        display: block;
+        position: absolute;
+        bottom: 100%;
+        left: 0;
+        padding: 0.25rem;
+        background: rgba(0 0 0 / 0.05);
+        text-transform: uppercase;
+      }
     </style>
   </head>
-  <body class="font-sans m-0 bg-gray-100 tracking-wide min-h-screen">
-    <header class="p-4">
-      <nav class="flex items-center">
-        <img src="images/logos/logo_36x36.png" alt="Logo" />
-        <a href="https://sembark.com">Sembark</a>
-      </nav>
+  <body class="font-sans m-0 tracking-wide min-h-screen py-8 container">
+    <header class="text-center mb-16">
+      <h1 class="flex items-center justify-center">
+        <img src="images/logos/logo_36x36.png" class="mr-4" alt="Logo" />
+        Sembark Assets
+      </h1>
+      <p>
+        This domain contains the static assets likes logos, icons etc. used by
+        Sembark Application.
+      </p>
     </header>
-    <main class="p-4">
-      <section class="mb-16">
-        <h2 id="logos">
-          Logos
-        </h2>
-        <div class="table-container">
-          <table border="1" class="w-full">
-            <caption>
-              Logos with there sources paths. All paths are relative to the
-              domain.
-            </caption>
-            <thead>
-              <tr>
-                <th>
-                  Source
-                </th>
-                <th>
-                  Description
-                </th>
-                <th>
-                  Preview
-                </th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <td>
-                  <code>images/logos/logo_16x16.png</code>
-                </td>
-                <td>
-                  The smallest logo. It's is there just in case!
-                </td>
-                <td>
-                  <img src="images/logos/logo_16x16.png" alt="16x16 Logo" />
-                </td>
-              </tr>
-              <tr>
-                <td>
-                  <code>images/logos/logo_36x36.png</code>
-                </td>
-                <td>
-                  Used mostly as application icon
-                </td>
-                <td>
-                  <img src="images/logos/logo_36x36.png" alt="36x36 Logo" />
-                </td>
-              </tr>
-              <tr>
-                <td>
-                  <code>images/logos/logo_48x48.png</code>
-                </td>
-                <td>
-                  General purpose logo size
-                </td>
-                <td>
-                  <img src="images/logos/logo_48x48.png" alt="48x48 Logo" />
-                </td>
-              </tr>
-              <tr>
-                <td>
-                  <code>images/logos/logo_96x96.png</code>
-                </td>
-                <td>
-                  When we need a logo with decent resolution.
-                </td>
-                <td>
-                  <img src="images/logos/logo_96x96.png" alt="96x96 Logo" />
-                </td>
-              </tr>
-              <tr>
-                <td>
-                  <code>images/logos/logo_144x144.png</code>
-                </td>
-                <td>
-                  When we need a logo with better resolution.
-                </td>
-                <td>
-                  <img src="images/logos/logo_144x144.png" alt="144x144 Logo" />
-                </td>
-              </tr>
-              <tr>
-                <td>
-                  <code>images/logos/logo_192x192.png</code>
-                </td>
-                <td>
-                  Mostly used in manifest of the web application.
-                </td>
-                <td>
-                  <img src="images/logos/logo_192x192.png" alt="192x192 Logo" />
-                </td>
-              </tr>
-              <tr>
-                <td>
-                  <code>images/logos/logo_512x512.png</code>
-                </td>
-                <td>
-                  When we need a larger logo. Mostly used in manifest of the web
-                  application.
-                </td>
-                <td>
-                  <img src="images/logos/logo_512x512.png" alt="512x512 Logo" />
-                </td>
-              </tr>
-            </tbody>
-          </table>
-        </div>
-      </section>
-      <section>
-        <h2>Icon</h2>
-        <p>
-          Icon is a SVG image with 16x16 dimensions.
-        </p>
-        <div class="table-container">
-          <table border="1" class="w-full">
-            <thead>
-              <tr>
-                <th>
-                  Source
-                </th>
-                <th>
-                  Description
-                </th>
-                <th>
-                  Preview
-                </th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <td>
-                  <code>images/icon.svg</code>
-                </td>
-                <td>
-                  SVG icon
-                </td>
-                <td>
-                  <img src="images/icon.svg" alt="SVG Icon" />
-                </td>
-              </tr>
-            </tbody>
-          </table>
-        </div>
-        <h3>
-          Favicons
+    <main class="relative md:flex md:items-start md:flex-row-reverse">
+      <aside class="mb-16 toc md:sticky top-0">
+        <h3 id="toc" class="text-secondary">
+          Table of Contents
         </h3>
-        <p>
-          Favicons are special cases of icons that are using as icons for
-          browsers tabs. We have SVGs and PNGs icons for <b>light</b> and
-          <b>dark</b> theme (system preference).
-        </p>
-        <div class="table-container">
-          <table border="1" class="w-full">
-            <thead>
-              <tr>
-                <th>
-                  Source
-                </th>
-                <th>
-                  Description
-                </th>
-                <th>
-                  Preview
-                </th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <td>
-                  <code>favicons/favicon.svg</code>
-                </td>
-                <td>
-                  SVG favicon for light theme
-                </td>
-                <td>
-                  <img
-                    src="favicons/favicon.svg"
-                    alt="SVG Favicon Light Theme"
-                  />
-                </td>
-              </tr>
-              <tr>
-                <td>
-                  <code>favicons/favicon.png</code>
-                </td>
-                <td>
-                  PNG favicon for light theme
-                </td>
-                <td>
-                  <img
-                    src="favicons/favicon.png"
-                    alt="PNG Favicon Light Theme"
-                  />
-                </td>
-              </tr>
-              <tr class="bg-black text-white">
-                <td>
-                  <code>favicons/favicon-dark.svg</code>
-                </td>
-                <td>
-                  SVG favicon for dark theme
-                </td>
-                <td>
+        <ul>
+          <li>
+            <a href="#icons">Icons</a>
+          </li>
+          <ul>
+            <li><a href="#svg_icon">SVG Icon</a></li>
+            <li><a href="#favicons">Favicons</a></li>
+            <ul>
+              <li><a href="#primary_favicons">Primary Favicons</a></li>
+            </ul>
+          </ul>
+          <li>
+            <a href="#logos">Logos</a>
+          </li>
+          <li>
+            <a href="#javascript">JavaScript</a>
+            <ul>
+              <li><a href="#themed_favicons">Themed Favicons</a></li>
+            </ul>
+          </li>
+        </ul>
+      </aside>
+      <section class="flex-1">
+        <section class="mb-16 flex-1">
+          <h2 id="icons">Icons</h2>
+          <p>
+            Icons are SVG and PNG images. These should be our first choice when
+            we want to show an image for our application.
+          </p>
+          <h3 id="svg_icon">
+            <a href="images/icon.svg" target="_blank"
+              ><img src="images/icon.svg" alt="SVG Icon" /> icon.svg</a
+            >
+          </h3>
+          <p>
+            The SVG icon for the application. It is drawn on 16x16 view box size
+            and can be scaled up or down based on any need. The fill for the SVG
+            is set to `currentColor` so the icon will adopt the color where it
+            belongs.
+          </p>
+          <p class="text-secondary">
+            Here are some examples showing the icon in different colors
+          </p>
+          <div>
+            <span style="color: #000;">
+              <svg
+                width="16"
+                height="16"
+                viewBox="0 0 16 16"
+                fill="currentColor"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M8 16a8 8 0 10-4.465-1.361c.41.276 0-.846.715-2.639.534-1.34 1.81-4.466 1.825-5.205.01-.534-.193-.994-.4-1.466-.046-.101-.09-.204-.134-.307-.391.768-1.764 1.929-2.69 1.743-1.285-.256-.419-1.777.116-2.359l.18-.201c.498-.563 1.191-1.347 1.836-1.076.312.13 1.09.701 1.707 1.19 0 0-.018-.047-.028-.079-.282-.87-.67-1.896 1.14-2.047.46-.04 2.776-.023 2.275.854-.202.352-1.139.45-1.863.526-.305.032-.573.06-.732.101.076.42.121.93.128 1.396 1.074.123 1.755.032 2.557-.075.399-.053.827-.11 1.348-.147C12.035 4.81 12.75 4.75 13 5c.165.165.204.575.145.934-.247 1.491-1.68 2.794-2.812 3.823-.191.174-.374.34-.54.498-1.642 1.55-2.523 3.144-2.434 5.127.01.189-.011.607.225.607.138.007.276.011.416.011z"
+                />
+              </svg>
+            </span>
+            <span style="color: #7950f2;">
+              <svg
+                width="16"
+                height="16"
+                viewBox="0 0 16 16"
+                fill="currentColor"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M8 16a8 8 0 10-4.465-1.361c.41.276 0-.846.715-2.639.534-1.34 1.81-4.466 1.825-5.205.01-.534-.193-.994-.4-1.466-.046-.101-.09-.204-.134-.307-.391.768-1.764 1.929-2.69 1.743-1.285-.256-.419-1.777.116-2.359l.18-.201c.498-.563 1.191-1.347 1.836-1.076.312.13 1.09.701 1.707 1.19 0 0-.018-.047-.028-.079-.282-.87-.67-1.896 1.14-2.047.46-.04 2.776-.023 2.275.854-.202.352-1.139.45-1.863.526-.305.032-.573.06-.732.101.076.42.121.93.128 1.396 1.074.123 1.755.032 2.557-.075.399-.053.827-.11 1.348-.147C12.035 4.81 12.75 4.75 13 5c.165.165.204.575.145.934-.247 1.491-1.68 2.794-2.812 3.823-.191.174-.374.34-.54.498-1.642 1.55-2.523 3.144-2.434 5.127.01.189-.011.607.225.607.138.007.276.011.416.011z"
+                />
+              </svg>
+            </span>
+            <span style="color: #12b886;">
+              <svg
+                width="16"
+                height="16"
+                viewBox="0 0 16 16"
+                fill="currentColor"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M8 16a8 8 0 10-4.465-1.361c.41.276 0-.846.715-2.639.534-1.34 1.81-4.466 1.825-5.205.01-.534-.193-.994-.4-1.466-.046-.101-.09-.204-.134-.307-.391.768-1.764 1.929-2.69 1.743-1.285-.256-.419-1.777.116-2.359l.18-.201c.498-.563 1.191-1.347 1.836-1.076.312.13 1.09.701 1.707 1.19 0 0-.018-.047-.028-.079-.282-.87-.67-1.896 1.14-2.047.46-.04 2.776-.023 2.275.854-.202.352-1.139.45-1.863.526-.305.032-.573.06-.732.101.076.42.121.93.128 1.396 1.074.123 1.755.032 2.557-.075.399-.053.827-.11 1.348-.147C12.035 4.81 12.75 4.75 13 5c.165.165.204.575.145.934-.247 1.491-1.68 2.794-2.812 3.823-.191.174-.374.34-.54.498-1.642 1.55-2.523 3.144-2.434 5.127.01.189-.011.607.225.607.138.007.276.011.416.011z"
+                />
+              </svg>
+            </span>
+          </div>
+          <p>
+            File Source Location:
+            <a href="images/icon.svg" target="_blank">images/icon.svg</a>
+          </p>
+          <h3 id="favicons">
+            Favicons
+          </h3>
+          <p>
+            These icons are used by different softwares such as Web browsers. We
+            provide SVGs as primary favicons and PNGs icons as the fallback
+            favicons.
+          </p>
+          <p>
+            Favicons are provided for both Light and Dark themes. Icons for Dark
+            theme ends (must) with `-dark` suffix. All favicons have 16x16 size.
+            All favicons are (must be) stored in `favicons` directory.
+          </p>
+          <p>
+            Here are the provided favicons. The background with border is for
+            better visibility of icon only and is not part of the favicons.
+          </p>
+          <h4 id="primary_favicons">
+            Primary Favicon
+          </h4>
+          <p>
+            This is the primary favicon for the application.
+          </p>
+          <div class="md:flex justify-between">
+            <div class="flex mb-4">
+              <div>
+                <div class="p-4 border">
+                  <img src="favicons/favicon.svg" alt="Light Primary Favicon" />
+                </div>
+              </div>
+              <div class="flex-1 ml-4">
+                <div>
+                  <b>
+                    Light
+                  </b>
+                </div>
+                <a href="favicons/favicon.svg" target="_blank"
+                  >favicons/favicon.svg</a
+                ><br />
+                <a href="favicons/favicon.png" target="_blank"
+                  >favicons/favicon.png</a
+                >
+              </div>
+            </div>
+            <div class="flex mb-4">
+              <div>
+                <div class="p-4 border bg-black">
                   <img
                     src="favicons/favicon-dark.svg"
-                    alt="SVG Favicon Dark Theme"
+                    alt="Dark Primary Favicon"
                   />
-                </td>
-              </tr>
-              <tr class="bg-black text-white">
-                <td>
-                  <code>favicons/favicon-dark.png</code>
-                </td>
-                <td>
-                  PNG favicon for dark theme
-                </td>
-                <td>
-                  <img
-                    src="favicons/favicon-dark.png"
-                    alt="PNG Favicon Dark Theme"
-                  />
-                </td>
-              </tr>
-            </tbody>
-          </table>
-        </div>
-        <p>
-          To add support for light/dark theme icons, we need to add the PNG and
-          SVG favicons to the &lt;head&gt; tag.
-        </p>
-        <pre><code>
-    &lt;!-- Fallback icon if SVG icons are not supported -->&gt;
-    &lt;link
-      rel="alternate icon"
-      class="js-site-favicon"
-      type="image/png"
-      href="favicons/favicon.png"
-    /&gt;
-    &lt;!-- SVG icon --&gt;
-    &lt;link
-      rel="icon"
-      class="js-site-favicon"
-      type="image/svg+xml"
-      href="favicons/favicon.svg"
-    /&gt;
-    </code></pre>
-        <p>
-          We use JavaScript to update the favicons based on current theme along
-          with listening to the theme changes. The script is available at
-          <a href="js/themed-favicon.js" target="_blank"
-            ><code>js/themed-favicon.js</code></a
-          >. You can link the provided JavaScript file to handle the themed
-          favicon.
-        </p>
-        <pre><code>
-    &lt;script src="js/themed-favicon.js"&gt;&lt;/script&gt;
-            </code></pre>
-        <p>
-          Finally, we have fallback <code>.ico</code> file for favicon at
-          <code>favicons/favicon.ico</code>
-        </p>
+                </div>
+              </div>
+              <div class="flex-1 ml-4">
+                <div>
+                  <b>
+                    Dark
+                  </b>
+                </div>
+                <a href="favicons/favicon-dark.svg" target="_blank"
+                  >favicons/favicon-dark.svg</a
+                ><br />
+                <a href="favicons/favicon-dark.png" target="_blank"
+                  >favicons/favicon-dark.png</a
+                >
+              </div>
+            </div>
+          </div>
+          <h4 id="fallback_favicons">
+            Fallback Favicon
+          </h4>
+          <p>
+            A fallback `favicon.ico` is also provided which should be used where
+            only `ico` file format is supported.
+          </p>
+          <div class="flex mb-4">
+            <div>
+              <div class="p-4 border">
+                <img src="favicons/favicon.ico" alt="Fallback Favicon" />
+              </div>
+            </div>
+            <div class="flex-1 ml-4">
+              <div>
+                <b>
+                  Fallback
+                </b>
+              </div>
+              <a href="favicons/favicon.ico" target="_blank"
+                >favicons/favicon.ico</a
+              >
+            </div>
+          </div>
+        </section>
+        <section class="mb-16">
+          <h2 id="logos">
+            Logos
+          </h2>
+          <p>
+            Logo are PNG images with a white background. These are used as
+            Sembark brand representation. These are used mostly in the
+            application manifest `manifest.json`. Prefer using SVG Icons when
+            possible.
+          </p>
+          <p>
+            Here are the provided logos with there sizes and sources. All logos
+            are stored in `images/logos` directory.
+          </p>
+          <div class="md:flex mb-4">
+            <div class="md:w-1/3">
+              <div>
+                <b>16&times;16</b>
+              </div>
+              <p>
+                <a href="images/logos/logo_16x16.png" target="_blank"
+                  >images/logos/logo_16x16.png</a
+                >
+              </p>
+              <p>
+                The smallest one. Only use under size constraints or in size
+                specific case.
+              </p>
+            </div>
+            <div class="flex-1">
+              <div class="p-4 border text-center">
+                <img src="images/logos/logo_16x16.png" alt="16x16 Logo" />
+              </div>
+            </div>
+          </div>
+          <div class="md:flex mb-4">
+            <div class="md:w-1/3">
+              <div>
+                <b>36&times;36</b>
+              </div>
+              <a href="images/logos/logo_36x36.png" target="_blank"
+                >images/logos/logo_36x36.png</a
+              >
+              <p>
+                The most used size. Small and Perfect.
+              </p>
+            </div>
+            <div class="flex-1">
+              <div class="p-4 border text-center">
+                <img src="images/logos/logo_36x36.png" alt="36x36 Logo" />
+              </div>
+            </div>
+          </div>
+          <div class="md:flex mb-4">
+            <div class="md:w-1/3">
+              <div>
+                <b>48&times;48</b>
+              </div>
+              <a href="images/logos/logo_48x48.png" target="_blank"
+                >images/logos/logo_48x48.png</a
+              >
+              <p>
+                The most used size. Or when we can not use 36.
+              </p>
+            </div>
+            <div class="flex-1">
+              <div class="p-4 border text-center">
+                <img src="images/logos/logo_48x48.png" alt="48x48 Logo" />
+              </div>
+            </div>
+          </div>
+          <div class="md:flex mb-4">
+            <div class="md:w-1/3">
+              <div>
+                <b>64&times;64</b>
+              </div>
+              <a href="images/logos/logo_64x64.png" target="_blank"
+                >images/logos/logo_64x64.png</a
+              >
+              <p>
+                Only use these when this specific size is needed.
+              </p>
+            </div>
+            <div class="flex-1">
+              <div class="p-4 border text-center">
+                <img src="images/logos/logo_64x64.png" alt="64x64 Logo" />
+              </div>
+            </div>
+          </div>
+          <div class="md:flex mb-4">
+            <div class="md:w-1/3">
+              <div>
+                <b>96&times;96</b>
+              </div>
+              <a href="images/logos/logo_96x96.png" target="_blank"
+                >images/logos/logo_96x96.png</a
+              >
+              <p>
+                Only use these when this specific size is needed.
+              </p>
+            </div>
+            <div class="flex-1">
+              <div class="p-4 border text-center">
+                <img src="images/logos/logo_96x96.png" alt="96x96 Logo" />
+              </div>
+            </div>
+          </div>
+          <div class="md:flex mb-4">
+            <div class="md:w-1/3">
+              <div>
+                <b>144&times;144</b>
+              </div>
+              <a href="images/logos/logo_144x144.png" target="_blank"
+                >images/logos/logo_144x144.png</a
+              >
+              <p>
+                Only use these when this specific size is needed.
+              </p>
+            </div>
+            <div class="flex-1">
+              <div class="p-4 border text-center">
+                <img src="images/logos/logo_144x144.png" alt="144x144 Logo" />
+              </div>
+            </div>
+          </div>
+          <div class="md:flex mb-4">
+            <div class="md:w-1/3">
+              <div>
+                <b>192&times;192</b>
+              </div>
+              <a href="images/logos/logo_192x192.png" target="_blank"
+                >images/logos/logo_192x192.png</a
+              >
+              <p>
+                A reasonable size logo with a high resolution.
+              </p>
+            </div>
+            <div class="flex-1">
+              <div class="p-4 border text-center">
+                <img src="images/logos/logo_192x192.png" alt="192x192 Logo" />
+              </div>
+            </div>
+          </div>
+          <div class="md:flex mb-4">
+            <div class="md:w-1/3">
+              <div>
+                <b>512&times;512</b>
+              </div>
+              <a href="images/logos/logo_512x512.png" target="_blank"
+                >images/logos/logo_512x512.png</a
+              >
+              <p>
+                The largest possible size provided. This is used mostly when we
+                need a really high resolution image or we need to upload the
+                logo to a service which will create icons for different sizes
+                e.g. Google Play Store.
+              </p>
+            </div>
+            <div class="flex-1">
+              <div class="p-4 border text-center">
+                <img src="images/logos/logo_512x512.png" alt="512x512 Logo" />
+              </div>
+            </div>
+          </div>
+        </section>
+        <section class="mb-16">
+          <h2 id="javascript">JavaScript</h2>
+          <p>
+            Here are some commonly used JavaScript snippets which are related to
+            the above assets only e.g. to add light/dark theme support for
+            icons. The usages of these must be minimal.
+          </p>
+          <h3 id="themed_favicons">
+            Themed Favicons
+          </h3>
+          <p>
+            This snippet updates the favicons based on currently active theme.
+            As mentioned earlier, favicons should not be used in the when we
+            have an option to use SVG icon. And so, the following snippets only
+            updated the favicons for browsers.
+          </p>
+          <p>
+            For the JavaScript code to work, first we must supply
+            `.js-site-favicon` class name to the `&lt;link /gt;` elements and
+            the favicons for dark theme must end with `-dark` suffix as given
+            bellow.
+          </p>
+          <pre data-lang="HTML"><code>&lt;link
+    rel="alternate icon"
+    class="js-site-favicon"
+    type="image/png"
+    href="favicons/favicon.png" /&gt;
+&lt;link
+    rel="icon"
+    class="js-site-favicon"
+    type="image/svg+xml"
+    href="favicons/favicon.svg" /&gt;</code></pre>
+          <p>
+            The JavaScript source code is available at
+            <a href="js/themed-favicon.js" target="_blank"
+              >js/themed-favicon.js</a
+            >, which can be linked in any page via `&lt;script&gt;` tag.
+            <pre data-lang="js"><code>&lt;script src="js/themed-favicon.js"&gt;&lt;/script&gt;</code></pre>
+          </p>
+        </section>
       </section>
     </main>
-    <hr />
-    <footer class="p-4">
-      <a href="https://sembark.com">App</a> |
-      <a href="https://docs.sembark.com">Help</a>
-    </footer>
     <script src="js/themed-favicon.js"></script>
   </body>
 </html>
