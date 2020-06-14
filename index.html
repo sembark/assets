@@ -152,18 +152,18 @@
         padding-left: 1rem;
       }
       .toc a {
-          color: inherit;
-          text-decoration: none;
-          opacity: .6;
-          display: block;
-          transition: opacity linear .15s;
-          margin-bottom: .5rem;
+        color: inherit;
+        text-decoration: none;
+        opacity: 0.6;
+        display: block;
+        transition: opacity linear 0.15s;
+        margin-bottom: 0.5rem;
       }
       .toc a:hover {
-          opacity: 1;
+        opacity: 1;
       }
       .toc ul > ul {
-          font-size: 95%;
+        font-size: 95%;
       }
       /* md devices */
       @media (min-width: 768px) {
@@ -191,7 +191,7 @@
         }
         .toc > ul {
           max-height: calc(100vh - 100px);
-              overflow: auto;
+          overflow: auto;
         }
       }
       pre {
@@ -239,13 +239,17 @@
           <li>
             <a href="#icons">Icons</a>
           </li>
-          <ul>
-            <li><a href="#svg_icon">SVG Icon</a></li>
-            <li><a href="#favicons">Favicons</a></li>
+          <li>
             <ul>
-              <li><a href="#primary_favicons">Primary Favicons</a></li>
+              <li><a href="#svg_icon">SVG Icon</a></li>
+              <li>
+                <a href="#favicons">Favicons</a>
+                <ul>
+                  <li><a href="#primary_favicons">Primary Favicons</a></li>
+                </ul>
+              </li>
             </ul>
-          </ul>
+          </li>
           <li>
             <a href="#logos">Logos</a>
           </li>
@@ -257,7 +261,7 @@
           </li>
         </ul>
       </aside>
-      <section class="flex-1">
+      <div class="flex-1">
         <section class="mb-16 flex-1">
           <h2 id="icons">Icons</h2>
           <p>
@@ -618,10 +622,12 @@
             <a href="js/themed-favicon.js" target="_blank"
               >js/themed-favicon.js</a
             >, which can be linked in any page via `&lt;script&gt;` tag.
-            <pre data-lang="js"><code>&lt;script src="js/themed-favicon.js"&gt;&lt;/script&gt;</code></pre>
           </p>
+          <pre
+            data-lang="js"
+          ><code>&lt;script src="js/themed-favicon.js"&gt;&lt;/script&gt;</code></pre>
         </section>
-      </section>
+      </div>
     </main>
     <script src="js/themed-favicon.js"></script>
   </body>
