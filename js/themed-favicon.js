@@ -2,22 +2,29 @@ if (typeof window !== "undefined") {
   (function updateFaviconForTheme(window) {
     function onThemeChange(theme) {
       const svg = document.querySelector(
-        '.js-site-favicon[type="image/svg+xml"]'
+        '.js-site-favicon[type="image/svg+xml"]',
       );
       const png = document.querySelector('.js-site-favicon[type="image/png"]');
+      if (svg) {
+        svg.href = getNewHref(svg.href, theme, "svg");
+      }
+      if (png) {
+        png.href = getNewHref(png.href, theme, "png");
+      }
+    }
+    function getNewHref(href, theme, fileType) {
       theme = theme || "light";
       const suffix = theme === "light" ? "" : "-dark";
-      if (svg && png) {
-        const indexOfDarkString = svg.href.indexOf("-dark.svg");
-        const hrefWithoutThemeAndPrefix = svg.href.substr(
-          0,
-          indexOfDarkString !== -1
-            ? indexOfDarkString
-            : svg.href.lastIndexOf(".")
-        );
-        svg.href = `${hrefWithoutThemeAndPrefix}${suffix}.svg`;
-        png.href = `${hrefWithoutThemeAndPrefix}${suffix}.png`;
-      }
+      const url = new URL(href);
+      const indexOfDarkString = url.pathname.indexOf("-dark");
+      const pathnameWithoutThemeAndPrefix = url.pathname.slice(
+        0,
+        indexOfDarkString !== -1
+          ? indexOfDarkString
+          : url.pathname.lastIndexOf("."),
+      );
+      url.pathname = `${pathnameWithoutThemeAndPrefix}${suffix}.${fileType}`;
+      return url.href;
     }
     function getMQL() {
       return (
@@ -27,7 +34,7 @@ if (typeof window !== "undefined") {
     let mql = getMQL();
     if (mql) {
       onThemeChange(mql.matches ? "dark" : "light");
-      mql.addListener(function (e) {
+      mql.addEventListener("change", function (e) {
         onThemeChange(e.matches ? "dark" : "light");
       });
     }
