@@ -96,6 +96,15 @@
       img {
         max-width: 100%;
       }
+      figure {
+        margin: 0;
+      }
+      figcaption:not(:last-child) {
+        margin-bottom: 1rem;
+      }
+      figcaption:not(:first-child) {
+        margin-top: 1rem;
+      }
       /* margin */
       .m-0 {
         margin: 0;
@@ -297,6 +306,9 @@
           </li>
           <li>
             <a href="#marketing">Marketing Images</a>
+          </li>
+          <li>
+            <a href="#screenshots">Product Screenshots</a>
           </li>
           <li>
             <a href="#javascript">JavaScript</a>
@@ -638,6 +650,57 @@
 &lt;meta name="og:image" content="https://assets.sembark.com/images/og-image.png" /&gt;
 &lt;meta name="og:image:secure_url" content="https://assets.sembark.com/images/og-image.png" /&gt;
 &lt;meta name="image" itemprop="image" property="og:image" content="https::assets.sembark.com/images/og-image.png" /&gt;</code></pre>
+            <p>
+              <b>Note:</b> All the images url must of absolute i.e. must contain
+              the full path to image including the domain name.
+            </p>
+          </div>
+        </section>
+        <section class="mb-16">
+          <h2 id="screenshots">Product Screenshots</h2>
+          <p>Product screenshots for various devices.</p>
+          <p>
+            Use following images when you need to include product screenshots
+          </p>
+          <ul>
+            <li>
+              <figure>
+                <figcaption>
+                  Business and Follow-up Overview Dashboard
+                </figcaption>
+                <img src="/images/screenshots/dashboard-wide.png" />
+                <a href="/images/screenshots/dashboard-wide.png" target="_blank"
+                  >/images/screenshots/dashboard-wide.png</a
+                >
+              </figure>
+            </li>
+            <li>
+              <figure>
+                <figcaption>
+                  Business and Follow-up Overview Dashboard
+                </figcaption>
+                <img src="/images/screenshots/dashboard-narrow.png" />
+                <a
+                  href="/images/screenshots/dashboard-narrow.png"
+                  target="_blank"
+                  >/images/screenshots/dashboard-narrow.png</a
+                >
+              </figure>
+            </li>
+          </ul>
+          <div>
+            <p>Example Usage in <code>manifest.json</code> file</p>
+            <pre data-lang="json"><code>{
+  "screenshots": [
+    {
+      "src": "https://assets.sembark.com/images/screenshots/dashboard-wide.png",
+      "sizes": "1280x720",
+      "type": "image/png",
+      "form_factor": "wide",
+      "label": "Business and Task Overview Dashboard"
+    }  
+  ]
+}</code></pre>
             <p>
               <b>Note:</b> All the images url must of absolute i.e. must contain
               the full path to image including the domain name.
